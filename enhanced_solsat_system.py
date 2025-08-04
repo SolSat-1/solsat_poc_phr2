@@ -9,6 +9,12 @@ from solar_prediction_engine import SolarPredictionEngine
 from typing import List, Tuple, Dict
 import json
 
+
+palettes = [
+        ((255, 165, 0), (255, 255, 255)),        # Orange to white
+        ('#5efc8d', '#35a7ff'),                  # Mint to blue
+        ((255,0,0), (255,255,0)),                # Red to yellow
+    ]
 class EnhancedSolarRooftopSystem:
     """
     Enhanced solar rooftop analysis system combining visualization with prediction
@@ -145,9 +151,43 @@ class EnhancedSolarRooftopSystem:
         """
         return popup_html
 
+    def hex_to_rgb(self, hex_color):
+        hex_color = hex_color.lstrip('#')
+        return tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+
+    def interpolate_colors(self, start_color, end_color, n):
+        # Accept hex or RGB tuple
+        if isinstance(start_color, str): 
+            start_color = self.hex_to_rgb(start_color)
+        if isinstance(end_color, str): 
+            end_color = self.hex_to_rgb(end_color)
+        start = np.array(start_color)
+        end = np.array(end_color)
+        ratios = np.linspace(0, 1, n)[:, None]
+        return (start * (1 - ratios) + end * ratios).astype(np.uint8)
+
+    def create_masked_overlay_image(self, polygon, grid_shape, palette, fname='masked_overlay.png'):
+        minx, miny, maxx, maxy = polygon.bounds
+        xs = np.linspace(minx, maxx, grid_shape[1])
+        ys = np.linspace(miny, maxy, grid_shape[0])
+        xx, yy = np.meshgrid(xs, ys)
+        lonlats = np.column_stack((xx.ravel(), yy.ravel()))
+        mask = np.array([polygon.contains(Point(lon, lat)) for lon, lat in lonlats]).reshape(grid_shape)
+
+        # Palette is (start, end), can be hex or RGB
+        n_pix = grid_shape[0] * grid_shape[1]
+        rgb_colors = self.interpolate_colors(palette[0], palette[1], n_pix).reshape(grid_shape[0], grid_shape[1], 3)
+        alpha = (mask * 255).astype(np.uint8)
+        rgba = np.dstack([rgb_colors, alpha])
+        rgba = np.flipud(rgba)  # Correct orientation for mapping
+        img = Image.fromarray(rgba, mode='RGBA')
+        img.save(fname)
+        return (miny, minx), (maxy, maxx), fname
+
+
     def render_enhanced_map(self, polygons, polygon_coords_list, monthly_consumption_kwh=500, 
-                          grid_shape=(100, 100), show_map=True, 
-                          tile_layer='https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}'):
+                          grid_shape=(100, 100), show_map=True,rgb=True,
+                          tile_layer='https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}') -> folium.Map:
         """
         Render enhanced map with solar analysis
         """
@@ -190,7 +230,12 @@ class EnhancedSolarRooftopSystem:
         # Add enhanced overlays for each polygon
         for idx, (polygon, analysis) in enumerate(zip(polygons, analysis_results)):
             fname = str(Path('files') / f'solar_overlay_{idx}.png')
-            sw, ne, fname = self.create_enhanced_overlay_image(polygon, analysis, grid_shape, fname)
+            
+            if rgb:
+                palette = palettes[idx % len(palettes)]
+                sw, ne, fname = self.create_masked_overlay_image(polygon, grid_shape, palette, fname)
+            else:
+                sw, ne, fname = self.create_enhanced_overlay_image(polygon, analysis, grid_shape, fname)
             overlay_files.append(fname)
             
             # Add overlay
@@ -201,17 +246,17 @@ class EnhancedSolarRooftopSystem:
                 opacity=0.8
             ).add_to(m)
             
-            # Add detailed popup
-            folium_coords = [(lat, lon) for lon, lat in polygon.exterior.coords]
-            popup_content = self.create_info_popup(analysis)
+            # # Add detailed popup
+            # folium_coords = [(lat, lon) for lon, lat in polygon.exterior.coords]
+            # popup_content = self.create_info_popup(analysis)
             
-            folium.Polygon(
-                locations=folium_coords,
-                color='#FF00FF', 
-                weight=2, 
-                fill=False,
-                popup=folium.Popup(popup_content, max_width=350)
-            ).add_to(m)
+            # folium.Polygon(
+            #     locations=folium_coords,
+            #     color='#FF00FF', 
+            #     weight=2, 
+            #     fill=False,
+            #     popup=folium.Popup(popup_content, max_width=350)
+            # ).add_to(m)
 
         # Add summary marker
         summary_html = f"""

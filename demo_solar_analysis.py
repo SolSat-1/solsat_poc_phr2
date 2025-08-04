@@ -60,7 +60,8 @@ def main():
             polygon_coords_list=rooftop_coordinates,
             monthly_consumption_kwh=scenario['consumption'],
             grid_shape=(100, 100),
-            show_map=True
+            show_map=True,
+            rgb=True
         )
         
         # Generate detailed report
