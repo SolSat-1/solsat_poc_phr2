@@ -1,0 +1,38 @@
+{
+  "300_kwh": {
+    "monthly_consumption": 300,
+    "total_panels": 2256,
+    "total_yearly_energy": 1036946.24955833,
+    "total_monthly_savings": 8338.769996466639,
+    "total_system_cost": 2030400.0,
+    "average_payback_years": 19.49878658943219,
+    "roi_percentage": 4.9283510617415125
+  },
+  "500_kwh": {
+    "monthly_consumption": 500,
+    "total_panels": 2256,
+    "total_yearly_energy": 1036946.24955833,
+    "total_monthly_savings": 8367.569996466638,
+    "total_system_cost": 2030400.0,
+    "average_payback_years": 19.49878658943219,
+    "roi_percentage": 4.945372338337257
+  },
+  "800_kwh": {
+    "monthly_consumption": 800,
+    "total_panels": 2256,
+    "total_yearly_energy": 1036946.24955833,
+    "total_monthly_savings": 8410.769996466639,
+    "total_system_cost": 2030400.0,
+    "average_payback_years": 19.49878658943219,
+    "roi_percentage": 4.9709042532308745
+  },
+  "1200_kwh": {
+    "monthly_consumption": 1200,
+    "total_panels": 2256,
+    "total_yearly_energy": 1036946.24955833,
+    "total_monthly_savings": 8468.36999646664,
+    "total_system_cost": 2030400.0,
+    "average_payback_years": 19.49878658943219,
+    "roi_percentage": 5.004946806422364
+  }
+}

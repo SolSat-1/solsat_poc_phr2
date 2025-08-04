@@ -5,12 +5,12 @@ import matplotlib.pyplot as plt
 from shapely.geometry import Polygon, Point
 import folium
 from folium.plugins import Draw, Fullscreen
-from solar_prediction_engine import SolarPredictionEngine
+from function.solar_prediction_engine import SolarPredictionEngine
 from typing import List, Tuple, Dict
 import json
 
 
-palettes = [
+list_palettes = [
         ((255, 165, 0), (255, 255, 255)),        # Orange to white
         ('#5efc8d', '#35a7ff'),                  # Mint to blue
         ((255,0,0), (255,255,0)),                # Red to yellow
@@ -232,7 +232,7 @@ class EnhancedSolarRooftopSystem:
             fname = str(Path('files') / f'solar_overlay_{idx}.png')
             
             if rgb:
-                palette = palettes[idx % len(palettes)]
+                palette = list_palettes[idx % len(list_palettes)]
                 sw, ne, fname = self.create_masked_overlay_image(polygon, grid_shape, palette, fname)
             else:
                 sw, ne, fname = self.create_enhanced_overlay_image(polygon, analysis, grid_shape, fname)

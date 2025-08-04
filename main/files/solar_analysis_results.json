@@ -1,0 +1,426 @@
+[
+  {
+    "roof_analysis": {
+      "area_m2": 1459.6572265625,
+      "coordinates": [
+        [
+          100.540148,
+          13.671842
+        ],
+        [
+          100.540164,
+          13.671602
+        ],
+        [
+          100.540577,
+          13.67167
+        ],
+        [
+          100.54055,
+          13.671899
+        ],
+        [
+          100.540534,
+          13.671972
+        ],
+        [
+          100.540239,
+          13.67193
+        ],
+        [
+          100.540255,
+          13.671847
+        ],
+        [
+          100.540148,
+          13.671842
+        ]
+      ]
+    },
+    "solar_irradiance": {
+      "ghi": 673.4148338285033,
+      "dni": 629.45345658879,
+      "elevation_angle": 86.84231837429873,
+      "air_mass": 1.0015205873505053,
+      "seasonal_factor": 1.071467338604296
+    },
+    "panel_optimization": {
+      "roof_area": 1459.6572265625,
+      "usable_area": 1094.742919921875,
+      "panel_count": 492,
+      "total_power_kw": 196.8,
+      "coverage_ratio": 0.6741308727099751
+    },
+    "energy_production": {
+      "daily_energy_kwh": 619.5685837155763,
+      "monthly_energy_kwh": 18587.05751146729,
+      "yearly_energy_kwh": 226142.53305618535,
+      "system_efficiency": 0.17,
+      "temperature_factor": 1.0
+    },
+    "economic_analysis": {
+      "total_system_cost": 442800.0,
+      "equipment_cost": 147600,
+      "installation_cost": 295200.0,
+      "annual_energy_value": 27137.10396674224,
+      "annual_maintenance": 4428.0,
+      "net_annual_savings": 22709.10396674224,
+      "monthly_energy_value": 2261.4253305618536,
+      "monthly_bill_reduction": 1837.940264449483,
+      "payback_years": 19.49878782749359,
+      "roi_percentage": 5.128523931061933
+    },
+    "solar_potential_score": 56.117902819041944,
+    "recommended_color_palette": [
+      "#FF8C00",
+      "#FFFFFF"
+    ],
+    "polygon_id": 0
+  },
+  {
+    "roof_analysis": {
+      "area_m2": 911.314453125,
+      "coordinates": [
+        [
+          100.540212,
+          13.671502
+        ],
+        [
+          100.540282,
+          13.671041
+        ],
+        [
+          100.540448,
+          13.671069
+        ],
+        [
+          100.540363,
+          13.67152
+        ],
+        [
+          100.540212,
+          13.671502
+        ]
+      ]
+    },
+    "solar_irradiance": {
+      "ghi": 673.4145345320454,
+      "dni": 629.4533829075044,
+      "elevation_angle": 86.84197837429875,
+      "air_mass": 1.0015209152383993,
+      "seasonal_factor": 1.071467338604296
+    },
+    "panel_optimization": {
+      "roof_area": 911.314453125,
+      "usable_area": 683.48583984375,
+      "panel_count": 306,
+      "total_power_kw": 122.4,
+      "coverage_ratio": 0.6715574387099678
+    },
+    "energy_production": {
+      "daily_energy_kwh": 385.3412649499271,
+      "monthly_energy_kwh": 11560.237948497814,
+      "yearly_energy_kwh": 140649.56170672338,
+      "system_efficiency": 0.17,
+      "temperature_factor": 1.0
+    },
+    "economic_analysis": {
+      "total_system_cost": 275400.0,
+      "equipment_cost": 91800,
+      "installation_cost": 183600.0,
+      "annual_energy_value": 16877.947404806804,
+      "annual_maintenance": 2754.0,
+      "net_annual_savings": 14123.947404806804,
+      "monthly_energy_value": 1406.4956170672338,
+      "monthly_bill_reduction": 1153.9964936537872,
+      "payback_years": 19.49879818345069,
+      "roi_percentage": 5.128521207264635
+    },
+    "solar_potential_score": 56.11787787767045,
+    "recommended_color_palette": [
+      "#FF8C00",
+      "#FFFFFF"
+    ],
+    "polygon_id": 1
+  },
+  {
+    "roof_analysis": {
+      "area_m2": 1078.0927734375,
+      "coordinates": [
+        [
+          100.540073,
+          13.672405
+        ],
+        [
+          100.540121,
+          13.672118
+        ],
+        [
+          100.540416,
+          13.672181
+        ],
+        [
+          100.540352,
+          13.672478
+        ],
+        [
+          100.540073,
+          13.672405
+        ]
+      ]
+    },
+    "solar_irradiance": {
+      "ghi": 673.4153293574594,
+      "dni": 629.4535785788171,
+      "elevation_angle": 86.84288137429873,
+      "air_mass": 1.0015200444847498,
+      "seasonal_factor": 1.071467338604296
+    },
+    "panel_optimization": {
+      "roof_area": 1078.0927734375,
+      "usable_area": 808.569580078125,
+      "panel_count": 363,
+      "total_power_kw": 145.2,
+      "coverage_ratio": 0.673411433493936
+    },
+    "energy_production": {
+      "daily_energy_kwh": 457.12105972113704,
+      "monthly_energy_kwh": 13713.63179163411,
+      "yearly_energy_kwh": 166849.18679821503,
+      "system_efficiency": 0.17,
+      "temperature_factor": 1.0
+    },
+    "economic_analysis": {
+      "total_system_cost": 326700.0,
+      "equipment_cost": 108900,
+      "installation_cost": 217800.0,
+      "annual_energy_value": 20021.902415785804,
+      "annual_maintenance": 3267.0,
+      "net_annual_savings": 16754.902415785804,
+      "monthly_energy_value": 1668.4918679821503,
+      "monthly_bill_reduction": 1363.5934943857203,
+      "payback_years": 19.498770681719773,
+      "roi_percentage": 5.128528440705786
+    },
+    "solar_potential_score": 56.117944113121624,
+    "recommended_color_palette": [
+      "#FF8C00",
+      "#FFFFFF"
+    ],
+    "polygon_id": 2
+  },
+  {
+    "roof_analysis": {
+      "area_m2": 1018.4189453125,
+      "coordinates": [
+        [
+          100.540325,
+          13.672155
+        ],
+        [
+          100.540363,
+          13.67193
+        ],
+        [
+          100.54054,
+          13.671967
+        ],
+        [
+          100.540577,
+          13.67191
+        ],
+        [
+          100.540727,
+          13.671962
+        ],
+        [
+          100.540684,
+          13.672181
+        ],
+        [
+          100.540325,
+          13.672155
+        ]
+      ]
+    },
+    "solar_irradiance": {
+      "ghi": 673.415109328851,
+      "dni": 629.4535244118738,
+      "elevation_angle": 86.84263137429883,
+      "air_mass": 1.001520285532135,
+      "seasonal_factor": 1.071467338604296
+    },
+    "panel_optimization": {
+      "roof_area": 1018.4189453125,
+      "usable_area": 763.814208984375,
+      "panel_count": 342,
+      "total_power_kw": 136.8,
+      "coverage_ratio": 0.6716292967135601
+    },
+    "energy_production": {
+      "daily_energy_kwh": 430.67589902017346,
+      "monthly_energy_kwh": 12920.276970605204,
+      "yearly_energy_kwh": 157196.70314236332,
+      "system_efficiency": 0.17,
+      "temperature_factor": 1.0
+    },
+    "economic_analysis": {
+      "total_system_cost": 307800.0,
+      "equipment_cost": 102600,
+      "installation_cost": 205200.0,
+      "annual_energy_value": 18863.604377083597,
+      "annual_maintenance": 3078.0,
+      "net_annual_savings": 15785.604377083597,
+      "monthly_energy_value": 1571.9670314236332,
+      "monthly_bill_reduction": 1286.3736251389066,
+      "payback_years": 19.498778294915454,
+      "roi_percentage": 5.128526438298764
+    },
+    "solar_potential_score": 56.11792577740425,
+    "recommended_color_palette": [
+      "#FF8C00",
+      "#FFFFFF"
+    ],
+    "polygon_id": 3
+  },
+  {
+    "roof_analysis": {
+      "area_m2": 1860.5947265625,
+      "coordinates": [
+        [
+          100.540593,
+          13.671503
+        ],
+        [
+          100.540668,
+          13.670982
+        ],
+        [
+          100.54092,
+          13.671018
+        ],
+        [
+          100.540904,
+          13.671159
+        ],
+        [
+          100.540963,
+          13.671169
+        ],
+        [
+          100.540878,
+          13.671534
+        ],
+        [
+          100.540593,
+          13.671503
+        ]
+      ]
+    },
+    "solar_irradiance": {
+      "ghi": 673.4145354123763,
+      "dni": 629.4533831242258,
+      "elevation_angle": 86.84197937429872,
+      "air_mass": 1.001520914273971,
+      "seasonal_factor": 1.071467338604296
+    },
+    "panel_optimization": {
+      "roof_area": 1860.5947265625,
+      "usable_area": 1395.446044921875,
+      "panel_count": 627,
+      "total_power_kw": 250.8,
+      "coverage_ratio": 0.6739780469639401
+    },
+    "energy_production": {
+      "daily_energy_kwh": 789.5718086256571,
+      "monthly_energy_kwh": 23687.154258769715,
+      "yearly_energy_kwh": 288193.71014836483,
+      "system_efficiency": 0.17,
+      "temperature_factor": 1.0
+    },
+    "economic_analysis": {
+      "total_system_cost": 564300.0,
+      "equipment_cost": 188100,
+      "installation_cost": 376200.0,
+      "annual_energy_value": 34583.24521780378,
+      "annual_maintenance": 5643.0,
+      "net_annual_savings": 28940.24521780378,
+      "monthly_energy_value": 2881.937101483648,
+      "monthly_bill_reduction": 2334.3496811869186,
+      "payback_years": 19.498798152990346,
+      "roi_percentage": 5.128521215276232
+    },
+    "solar_potential_score": 56.11787795103136,
+    "recommended_color_palette": [
+      "#FF8C00",
+      "#FFFFFF"
+    ],
+    "polygon_id": 4
+  },
+  {
+    "roof_analysis": {
+      "area_m2": 373.8359375,
+      "coordinates": [
+        [
+          100.54062,
+          13.671889
+        ],
+        [
+          100.540647,
+          13.671649
+        ],
+        [
+          100.540776,
+          13.671665
+        ],
+        [
+          100.540733,
+          13.671915
+        ],
+        [
+          100.54062,
+          13.671889
+        ]
+      ]
+    },
+    "solar_irradiance": {
+      "ghi": 673.4148751993054,
+      "dni": 629.4534667735176,
+      "elevation_angle": 86.84236537429865,
+      "air_mass": 1.0015205420276174,
+      "seasonal_factor": 1.071467338604296
+    },
+    "panel_optimization": {
+      "roof_area": 373.8359375,
+      "usable_area": 280.376953125,
+      "panel_count": 126,
+      "total_power_kw": 50.4,
+      "coverage_ratio": 0.6740924954546405
+    },
+    "energy_production": {
+      "daily_energy_kwh": 158.67001289446034,
+      "monthly_energy_kwh": 4760.10038683381,
+      "yearly_energy_kwh": 57914.554706478026,
+      "system_efficiency": 0.17,
+      "temperature_factor": 1.0
+    },
+    "economic_analysis": {
+      "total_system_cost": 113400.0,
+      "equipment_cost": 37800,
+      "installation_cost": 75600.0,
+      "annual_energy_value": 6949.746564777362,
+      "annual_maintenance": 1134.0,
+      "net_annual_savings": 5815.746564777362,
+      "monthly_energy_value": 579.1455470647802,
+      "monthly_bill_reduction": 492.11643765182424,
+      "payback_years": 19.498786396023288,
+      "roi_percentage": 5.128524307563811
+    },
+    "solar_potential_score": 56.11790626660878,
+    "recommended_color_palette": [
+      "#FF8C00",
+      "#FFFFFF"
+    ],
+    "polygon_id": 5
+  }
+]

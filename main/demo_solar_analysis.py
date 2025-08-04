@@ -4,7 +4,8 @@ Demo script for the Enhanced Solar Rooftop Analysis System
 This script demonstrates the complete solar analysis workflow
 """
 
-from enhanced_solsat_system import EnhancedSolarRooftopSystem
+from function.enhanced_solsat_system import EnhancedSolarRooftopSystem
+from function.solar_prediction_engine import SolarPredictionEngine
 from shapely.geometry import Polygon
 import json
 
@@ -135,7 +136,7 @@ def quick_single_rooftop_analysis():
     print("\n🏠 QUICK SINGLE ROOFTOP ANALYSIS")
     print("-" * 40)
     
-    from solar_prediction_engine import SolarPredictionEngine
+    
     
     engine = SolarPredictionEngine()
     
