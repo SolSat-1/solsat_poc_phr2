@@ -37,7 +37,7 @@ jobs:
     - name: Run demo analysis
       run: |
         source .venv/bin/activate
-        python demo_solar_analysis.py
+        python main_solar_analysis.py
     
     - name: Check generated files
       run: |
