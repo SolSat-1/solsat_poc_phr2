@@ -43,7 +43,7 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "solar-analysis=demo_solar_analysis:main",
+            "solar-analysis=main_solar_analysis:main",
         ],
     },
     include_package_data=True,

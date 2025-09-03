@@ -45,7 +45,7 @@ uv pip install -r requirements.txt
 ### Running the Demo
 
 ```bash
-python demo_solar_analysis.py
+python main_solar_analysis.py
 ```
 
 This will:
@@ -70,7 +70,7 @@ This will:
    - Report generation
    - Multi-scenario analysis
 
-3. **Demo System** (`demo_solar_analysis.py`)
+3. **Demo System** (`main_solar_analysis.py`)
    - Example usage
    - Scenario comparisons
    - File generation

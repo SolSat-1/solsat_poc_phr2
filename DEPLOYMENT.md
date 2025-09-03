@@ -16,7 +16,7 @@ enhanced-solar-rooftop-analysis/
 ├── DEPLOYMENT.md                  # This file
 ├── LICENSE                        # MIT License
 ├── README.md                      # Main documentation
-├── demo_solar_analysis.py         # Demo script and main entry point
+├── main_solar_analysis.py         # Demo script and main entry point
 ├── enhanced_solsat_system.py      # Enhanced visualization system
 ├── poc_solsat_data_layer.py       # Original data layer (legacy)
 ├── requirements.txt               # Python dependencies
@@ -40,7 +40,7 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 uv pip install -r requirements.txt
 
 # Run the demo
-python demo_solar_analysis.py
+python main_solar_analysis.py
 ```
 
 ### Production Installation
@@ -80,7 +80,7 @@ RUN mkdir -p files
 EXPOSE 8000
 
 # Run the application
-CMD ["python", "demo_solar_analysis.py"]
+CMD ["python", "main_solar_analysis.py"]
 ```
 
 ### Docker Compose
@@ -261,7 +261,7 @@ pip install dependabot-core
 uv pip install --upgrade -r requirements.txt
 
 # Run tests
-python demo_solar_analysis.py
+python main_solar_analysis.py
 
 # Deploy updates
 git push origin main

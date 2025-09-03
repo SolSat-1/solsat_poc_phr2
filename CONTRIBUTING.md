@@ -31,7 +31,7 @@ uv pip install -e ".[dev]"  # Install development dependencies
 
 4. **Run tests**
 ```bash
-python demo_solar_analysis.py
+python main_solar_analysis.py
 ```
 
 ## 🛠️ Development Guidelines
@@ -120,7 +120,7 @@ git push origin feature/your-feature-name
 ## 🧪 Testing Guidelines
 
 ### Manual Testing
-1. Run the demo script: `python demo_solar_analysis.py`
+1. Run the demo script: `python main_solar_analysis.py`
 2. Check generated files in `files/` directory
 3. Open `enhanced_solar_map.html` in browser
 4. Verify all interactive features work
