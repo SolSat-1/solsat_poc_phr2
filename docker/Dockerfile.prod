@@ -1,0 +1,62 @@
+# Multi-stage build for production optimization
+FROM python:3.11-slim as builder
+
+# Install system dependencies for building
+RUN apt-get update && apt-get install -y \
+    gcc \
+    g++ \
+    libgeos-dev \
+    libproj-dev \
+    libgdal-dev \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir --user -r requirements.txt
+
+# Production stage
+FROM python:3.11-slim
+
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV PORT=8000
+ENV PATH=/root/.local/bin:$PATH
+
+# Install runtime dependencies only
+RUN apt-get update && apt-get install -y \
+    libgeos-c1v5 \
+    libproj22 \
+    libgdal30 \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy Python packages from builder stage
+COPY --from=builder /root/.local /root/.local
+
+# Set work directory
+WORKDIR /app
+
+# Create non-root user for security
+RUN groupadd -r appuser && useradd -r -g appuser appuser
+
+# Copy application code
+COPY --chown=appuser:appuser . .
+
+# Create output directories
+RUN mkdir -p output/maps output/overlays output/reports \
+    && chown -R appuser:appuser output/
+
+# Switch to non-root user
+USER appuser
+
+# Expose port
+EXPOSE $PORT
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=30s --start-period=10s --retries=3 \
+    CMD curl -f http://localhost:$PORT/api/v1/health || exit 1
+
+# Command to run the application
+CMD ["python", "run.py"]

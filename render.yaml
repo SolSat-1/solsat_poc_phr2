@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: solsat-api
+    env: python
+    repo: https://github.com/SolSat-1/solsat_poc_phr2.git
+    branch: api
+    buildCommand: pip install -r requirements.txt
+    startCommand: python run.py
+    plan: free
+    envVars:
+      - key: ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        sync: false
+        value: "10000"
+    healthCheckPath: /api/v1/health

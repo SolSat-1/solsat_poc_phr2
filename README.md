@@ -1,6 +1,6 @@
-# Enhanced Solar Rooftop Analysis System
+# Solar Analysis API v2.0
 
-A comprehensive solar energy prediction and visualization system that analyzes rooftop potential using RGB color mapping, solar irradiance calculations, and economic modeling.
+A comprehensive solar analysis system that analyzes building/rooftop polygons and provides detailed solar energy predictions and recommendations.
 
 ## 🌟 Features
 
@@ -86,7 +86,46 @@ Area Calculation → Panel Optimization → Overlays → Text Reports
 Usage Patterns → Economic Analysis → Interactive Map → Comparisons
 ```
 
-## 🔧 Configuration
+## � Deployment
+
+### Deploy to Render
+
+1. **Automatic Deploy with render.yaml**:
+   - Push your code to GitHub
+   - Connect your repository to Render
+   - Render will automatically use the `render.yaml` configuration
+
+2. **Manual Deploy**:
+   - Create a new Web Service on Render
+   - Connect your GitHub repository
+   - Set build command: `pip install -r requirements.txt`
+   - Set start command: `python run.py`
+   - Set environment variable: `ENV=production`
+
+### Docker Deployment
+
+1. **Build and run locally**:
+```bash
+# Development
+docker-compose -f docker/docker-compose.yml up --build
+
+# Production
+docker build -f docker/Dockerfile.prod -t solsat-api .
+docker run -p 8000:8000 solsat-api
+```
+
+2. **Using the build script**:
+```bash
+./scripts/deploy/build.sh
+```
+
+### Environment Variables for Production
+
+- `ENV`: Set to `production` for production deployment
+- `HOST`: Set to `0.0.0.0` for container deployment
+- `PORT`: Port number (default: 8000)
+
+## 🛠️ Setup
 
 ### Solar Panel Specifications
 ```python
